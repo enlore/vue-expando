@@ -73,3 +73,38 @@
         ]
     }
 </script>
+
+<style scoped>
+    .appExpansionPanel {
+        overflow: hidden;
+        transition: height 300ms ease;
+        height: 104px;
+    }
+
+    .appExpansionPanel-transitionWrap {
+        padding: 32px;
+    }
+
+    .appExpansionPanel-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .appExpansionPanel-title {
+        flex: 0 1 256px;
+        margin: 0;
+    }
+
+    .appExpansionPanel-subtitle {
+        flex: 1 1 auto;
+        margin: 0;
+    }
+
+    .appExpansionPanel-control {
+        flex: 0 0 32px;
+    }
+
+    .appExpansionPanel-content {
+        margin-top: 32px;
+    }
+</style>
