@@ -1,22 +1,20 @@
 <template>
-    <div class="appSheet appExpansionPanel" v-content-expand>
+    <div class="vue-expando" v-content-expand>
+        <div class="vue-expando-transitionWrap" v-content-get-height>
 
-        <div class="appExpansionPanel-transitionWrap"
-            v-content-get-height>
+            <div class="vue-expando-header">
+                <h4 class="vue-expando-title"> {{ title }} </h4>
 
-            <div class="appExpansionPanel-header">
-                <h4 class="appExpansionPanel-title"> {{ title }} </h4>
+                <p class="vue-expando-subtitle"> {{ subtitle }} </p>
 
-                <p class="appExpansionPanel-subtitle"> {{ subtitle }} </p>
-
-                <span class="appExpansionPanel-control"
+                <span class="vue-expando-control"
                     @click="toggleOpen">
                     <span v-if="panelIsOpen"> Collapse </span>
                     <span v-else> Expand </span>
                 </span>
             </div>
 
-            <div class="appExpansionPanel-content">
+            <div class="vue-expando-content">
                 <slot></slot>
             </div>
 
@@ -75,36 +73,36 @@
 </script>
 
 <style scoped>
-    .appExpansionPanel {
+    .vue-expando {
         overflow: hidden;
         transition: height 300ms ease;
         height: 104px;
     }
 
-    .appExpansionPanel-transitionWrap {
+    .vue-expando-transitionWrap {
         padding: 32px;
     }
 
-    .appExpansionPanel-header {
+    .vue-expando-header {
         display: flex;
         align-items: center;
     }
 
-    .appExpansionPanel-title {
+    .vue-expando-title {
         flex: 0 1 256px;
         margin: 0;
     }
 
-    .appExpansionPanel-subtitle {
+    .vue-expando-subtitle {
         flex: 1 1 auto;
         margin: 0;
     }
 
-    .appExpansionPanel-control {
+    .vue-expando-control {
         flex: 0 0 32px;
     }
 
-    .appExpansionPanel-content {
+    .vue-expando-content {
         margin-top: 32px;
     }
 </style>
