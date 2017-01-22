@@ -1,11 +1,11 @@
 {
   "name": "vue-expando",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Animated expanding content container that auto grows to the correct height",
   "main": "index.js",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/enlore/vue-expando.git"
+    "type": "git",
+    "url": "https://github.com/enlore/vue-expando.git"
   },
   "author": "enlore",
   "license": "MIT"
