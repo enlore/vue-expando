@@ -7,7 +7,7 @@ import buble from 'rollup-plugin-buble'
 export default {
     entry: 'src/expando.vue',
     targets: [
-        { dest: 'dist/expando.umd.js', format: 'umd', moduleName: 'Expando' },
+        { dest: 'dist/expando.umd.js', format: 'umd', moduleName: 'Expando', moduleId: 'Expando' },
         { dest: 'dist/expando.js', format: 'es' },
     ],
     plugins: [
