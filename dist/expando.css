@@ -1,32 +1,26 @@
 .vue-expando {
     overflow: hidden;
     transition: height 300ms ease;
-    height: 104px;
+    height: 96;
 }
 
 .vue-expando-transitionWrap {
     padding: 32px;
 }
 
-.vue-expando-header {
-    display: flex;
-    align-items: center;
-}
-
-.vue-expando-title {
-    flex: 0 1 256px;
-    margin: 0;
-}
-
-.vue-expando-subtitle {
-    flex: 1 1 auto;
-    margin: 0;
+.vue-expando-content {
+    position: relative;
 }
 
 .vue-expando-control {
-    flex: 0 0 32px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
 
-.vue-expando-content {
+.vue-expando-header {
+}
+
+.vue-expando-body {
     margin-top: 32px;
 }
