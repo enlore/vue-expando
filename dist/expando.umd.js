@@ -4,7 +4,7 @@
 	(global.Expando = factory());
 }(this, (function () { 'use strict';
 
-var expando = { template: "<div class=\"vue-expando\" v-content-expand><div class=\"vue-expando-transitionWrap\" v-content-get-height><div class=\"vue-expando-header\"><h4 class=\"vue-expando-title\">{{ title }}</h4><p class=\"vue-expando-subtitle\">{{ subtitle }}</p><span class=\"vue-expando-control\" @click=\"toggleOpen\"><span v-if=\"panelIsOpen\">Collapse </span><span v-else>Expand</span></span></div><div class=\"vue-expando-content\"><slot></slot></div></div></div>",
+var expando = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"content-expand",rawName:"v-content-expand"}],staticClass:"vue-expando"},[_c('div',{directives:[{name:"content-get-height",rawName:"v-content-get-height"}],staticClass:"vue-expando-transitionWrap"},[_c('div',{staticClass:"vue-expando-header"},[_c('h4',{staticClass:"vue-expando-title"},[_vm._v(_vm._s(_vm.title))]),_c('p',{staticClass:"vue-expando-subtitle"},[_vm._v(_vm._s(_vm.subtitle))]),_c('span',{staticClass:"vue-expando-control",on:{"click":_vm.toggleOpen}},[(_vm.panelIsOpen)?_c('span',[_vm._v("Collapse ")]):_c('span',[_vm._v("Expand")])])]),_c('div',{staticClass:"vue-expando-content"},[_vm._t("default")],2)])])},staticRenderFns: [],
     data: function data () {
         return {
             panelIsOpen: false,

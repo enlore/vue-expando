@@ -12,7 +12,8 @@ export default {
     ],
     plugins: [
         vue({
-            css: 'dist/expando.css'
+            css: 'dist/expando.css',
+            compileTemplate: true
         }),
         buble()
     ]
