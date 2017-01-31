@@ -1,6 +1,6 @@
 {
   "name": "vue-expando",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Animated expanding content container that auto grows to the correct height",
   "main": "dist/expando.js",
   "browser": "dist/expando.umd.js",
