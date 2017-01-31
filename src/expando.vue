@@ -1,25 +1,20 @@
 <template>
     <div class="vue-expando" v-content-expand>
-        <div class="vue-expando-transitionWrap" v-content-get-height>
+        <div class="vue-expando-transitionWrap vue-expando-content" v-content-get-height>
 
             <div class="vue-expando-header">
-                <div class="vue-expando-title">
-                    <slot name="title"></slot>
-                </div>
-
-                <div class="vue-expando-subtitle">
-                    <slot name="subtitle"></slot>
-                </div>
-
                 <span class="vue-expando-control"
                     @click="toggleOpen">
                     <span v-if="panelIsOpen"> Collapse </span>
                     <span v-else> Expand </span>
                 </span>
+
+                <slot name="header"></slot>
+
             </div>
 
-            <div class="vue-expando-content">
-                <slot name="content"></slot>
+            <div class="vue-expando-body">
+                <slot name="body"></slot>
             </div>
 
         </div>
@@ -32,7 +27,7 @@
         data () {
             return {
                 panelIsOpen: false,
-                contentHeight: 0,
+                bodyHeight: 0,
                 _baseHeight: 96
             }
         },
@@ -48,7 +43,7 @@
                 if (this.panelIsOpen) { // close it
                     this.expandEl.style.height = this.baseHeight + 'px'
                 } else { // open it
-                    this.expandEl.style.height = this.contentHeight + 'px'
+                    this.expandEl.style.height = this.bodyHeight + 'px'
                 }
 
                 // flip the val
@@ -66,8 +61,8 @@
 
             'content-get-height': {
                 inserted (el, binding, vnode) {
-                    // calculated height of content in target element
-                    vnode.context.contentHeight = el.clientHeight
+                    // calculated height of body in target element
+                    vnode.context.bodyHeight = el.clientHeight
                 }
             }
         },
@@ -82,33 +77,27 @@
     .vue-expando {
         overflow: hidden;
         transition: height 300ms ease;
-        height: 104px;
+        height: 96;
     }
 
     .vue-expando-transitionWrap {
         padding: 32px;
     }
 
-    .vue-expando-header {
-        display: flex;
-        align-items: center;
-    }
-
-    .vue-expando-title {
-        flex: 0 1 256px;
-        margin: 0;
-    }
-
-    .vue-expando-subtitle {
-        flex: 1 1 auto;
-        margin: 0;
+    .vue-expando-content {
+        position: relative;
     }
 
     .vue-expando-control {
-        flex: 0 0 32px;
+        position: absolute;
+        top: 8px;
+        right: 8px;
     }
 
-    .vue-expando-content {
+    .vue-expando-header {
+    }
+
+    .vue-expando-body {
         margin-top: 32px;
     }
 </style>
