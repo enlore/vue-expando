@@ -3,9 +3,13 @@
         <div class="vue-expando-transitionWrap" v-content-get-height>
 
             <div class="vue-expando-header">
-                <h4 class="vue-expando-title"> {{ title }} </h4>
+                <div class="vue-expando-title">
+                    <slot name="title"></slot>
+                </div>
 
-                <p class="vue-expando-subtitle"> {{ subtitle }} </p>
+                <div class="vue-expando-subtitle">
+                    <slot name="subtitle"></slot>
+                </div>
 
                 <span class="vue-expando-control"
                     @click="toggleOpen">
@@ -15,7 +19,7 @@
             </div>
 
             <div class="vue-expando-content">
-                <slot></slot>
+                <slot name="content"></slot>
             </div>
 
         </div>
@@ -29,11 +33,14 @@
             return {
                 panelIsOpen: false,
                 contentHeight: 0,
-                baseHeight: 104
+                _baseHeight: 96
             }
         },
 
         computed: {
+            baseHeight () {
+                return this.initialHeight || this._baseHeight
+            }
         },
 
         methods: {
@@ -66,8 +73,7 @@
         },
 
         props: [
-            'title',
-            'subtitle'
+            'initialHeight'
         ]
     }
 </script>
