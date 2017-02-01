@@ -28,14 +28,12 @@
             return {
                 panelIsOpen: false,
                 bodyHeight: 0,
-                _baseHeight: 96
+                baseHeight: 96
             }
         },
 
-        computed: {
-            baseHeight () {
-                return this.initialHeight || this._baseHeight
-            }
+        created () {
+            this.baseHeight = this.initialHeight || this.baseHeight
         },
 
         methods: {
@@ -80,10 +78,6 @@
         height: 96;
     }
 
-    .vue-expando-transitionWrap {
-        padding: 32px;
-    }
-
     .vue-expando-content {
         position: relative;
     }
@@ -98,6 +92,5 @@
     }
 
     .vue-expando-body {
-        margin-top: 32px;
     }
 </style>

@@ -3,14 +3,12 @@ var expando = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=
         return {
             panelIsOpen: false,
             bodyHeight: 0,
-            _baseHeight: 96
+            baseHeight: 96
         }
     },
 
-    computed: {
-        baseHeight: function baseHeight () {
-            return this.initialHeight || this._baseHeight
-        }
+    created: function created () {
+        this.baseHeight = this.initialHeight || this.baseHeight;
     },
 
     methods: {

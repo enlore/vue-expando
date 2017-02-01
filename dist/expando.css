@@ -4,10 +4,6 @@
     height: 96;
 }
 
-.vue-expando-transitionWrap {
-    padding: 32px;
-}
-
 .vue-expando-content {
     position: relative;
 }
@@ -22,5 +18,4 @@
 }
 
 .vue-expando-body {
-    margin-top: 32px;
 }
