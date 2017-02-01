@@ -15,7 +15,6 @@ var expando = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=
 
     created: function created () {
         this.baseHeight = this.initialHeight || this.baseHeight;
-        this.expandEl.style.height = this.baseHeight + 'px';
     },
 
     watch: {

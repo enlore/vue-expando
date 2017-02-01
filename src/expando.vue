@@ -34,7 +34,6 @@
 
         created () {
             this.baseHeight = this.initialHeight || this.baseHeight
-            this.expandEl.style.height = this.baseHeight + 'px'
         },
 
         watch: {
